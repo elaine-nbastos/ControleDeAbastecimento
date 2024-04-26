@@ -1,0 +1,23 @@
+:root{
+    /*CORES - light*/
+    --cor-planoDeFundo: #b2f7eb ;
+    
+    
+    /*CORES - dark*/
+
+    --cor-planoDeFundo-dark: #4e4c4c;
+    --cor-fonte-primaria: white;
+}
+
+[data-bs-theme="light"]{
+    body{
+        background-color: var(--cor-planoDeFundo) !important;
+    
+    }
+}
+
+[data-bs-theme="dark"]{
+    body{
+        background-color: var(--cor-planoDeFundo-dark) !important ;
+        }
+}
