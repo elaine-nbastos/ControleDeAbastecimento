@@ -44,22 +44,25 @@
                 <h2 class="title">Cadastro de abastecimento</h2>
             </div>
             <div class="d-flex my-5">
-            <div class="m-3">
-                <label for="formGroupExampleInput" class="form-label">Quantos km rodou?</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" style="width:5rem;" placeholder="km">
+              <div class="m-3">
+                <label for="kmRodado" class="form-label">Quantos km rodou?</label>
+                <input type="text" class="form-control" id="kmRodado" style="width:5rem;" placeholder="km">
               </div>
               <div class="m-3">
-                <label for="formGroupExampleInput2" class="form-label">Quantos litros abasteceu?</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" style="width:5rem;" placeholder="Lt">
+                <label for="litros" class="form-label">Quantos litros abasteceu?</label>
+                <input type="text" class="form-control" id="litros" style="width:5rem;" placeholder="Lt">
               </div>
               <div class="m-3">
-                <label for="formGroupExampleInput2" class="form-label">Valor total pago?</label>
-                <input type="text" class="form-control" id="formGroupExampleInput3" style="width:5rem;" placeholder="R$">
+                <label for="valor" class="form-label">Valor total pago?</label>
+                <input type="text" class="form-control" id="valor" style="width:5rem;" placeholder="R$">
               </div>
               <div class="m-3">
-                <label for="formGroupExampleInput2" class="form-label">Gasolina ou etanol?</label>
-                <input type="text" class="form-control" id="formGroupExampleInput4" style="width:5rem;" placeholder="G / E">
+                <label for="feitoNoDia" class="form-label">Total recebido pelas corridas?</label>
+                <input type="text" class="form-control" id="feitoNoDia" style="width:5rem;" placeholder="R$">
               </div>
+            </div>
+            <div class="d-flex justify-content-center rounded-1 border-1" >
+              <button type="button" class="btn m-5" onclick="calcular()">Calcular</button>
             </div>
         </section>
         <section>
@@ -78,7 +81,7 @@
                   </div>
                   <div class="card mx-2" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Seu km rodado te custou:</h5>
+                        <h5 class="card-title">Custo por km:</h5>
                       <p id="valorDoKm" class="card-text"></p>
                     </div>
                   </div>
