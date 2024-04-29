@@ -8,99 +8,101 @@
     <script src="./script.js" async></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body data-bs-theme="light">
-    <header>
-        <header class="fixed-top">
-            <nav class="navbar">
-                <div class="container-fluid dropdown">
-                    <button class="navbar-toggler" type="button" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="navbar-toggler-icon">
-                            <ul class="dropdown-menu bg-lilas">
-                                <li><a class="dropdown-item" href="#">Sobre mim</a></li>
-                                <li><a class="dropdown-item" href="#">Habilidades</a></li>
-                                <li><a class="dropdown-item" href="#">Projetos</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Minhas redes</a></li>
-                            </ul>
-                        </span>
-                    </button>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="modo-noturno">
-                        <label class="form-check-label" for="modo-noturno">
-                            <span class="position-relative">
-                                <i class="bi bi-moon"></i>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-            </nav>
-        </header>    </header>
-    <main>
-        <section>
-            <div class="consumo d-flex justify-content-center my-5">
+<body data-bs-theme="light bg-light">
+  <header class="fixed-top m-5">
+      <nav class="navbar">
+          <div class="container-fluid dropdown">
+              <button class="navbar-toggler" type="button" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <span class="navbar-toggler-icon">
+                      <ul class="dropdown-menu bg-lilas">
+                          <li><a class="dropdown-item" href="#">Sobre mim</a></li>
+                          <li><a class="dropdown-item" href="#">Habilidades</a></li>
+                          <li><a class="dropdown-item" href="#">Projetos</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Minhas redes</a></li>
+                      </ul>
+                  </span>
+              </button>
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="modo-noturno">
+                  <label class="form-check-label" for="modo-noturno">
+                      <span class="position-relative">
+                          <i class="bi bi-moon"></i>
+                      </span>
+                  </label>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <main class="m-5  bg-img img-fluid">
+    <section>
+        <div class="consumo d-flex justify-content-center my-5">
                 <h2 class="title">Cadastro de abastecimento</h2>
-            </div>
-            <div class="d-flex my-5">
-              <div class="m-3">
-                <label for="kmRodado" class="form-label">Quantos km rodou?</label>
-                <input type="text" class="form-control" id="kmRodado" style="width:5rem;" placeholder="km">
+        </div>
+        <div class=" row d-flex my-5">
+          <div class="m-3 col-6 col-lg-2 col-md-4">
+            <label for="kmRodado" class="form-label">Quantos km rodou?</label>
+            <input type="text" class="form-control bg-light" id="kmRodado" style="width:5rem;" placeholder="km">
+          </div>
+          <div class="m-3 col-6 col-lg-2 col-md-4">
+            <label for="litros" class="form-label">Quantos litros abasteceu?</label>
+            <input type="text" class="form-control bg-light" id="litros" style="width:5rem;" placeholder="Lt">
+          </div>
+          <div class="m-3 col-6 col-lg-2 col-md-4">
+            <label for="valor" class="form-label">Valor total pago?</label>
+            <input type="text" class="form-control bg-light" id="valor" style="width:5rem;" placeholder="R$">
+          </div>
+          <div class="m-3 col-6 col-lg-2 col-md-4">
+            <label for="feitoNoDia" class="form-label">Total recebido pelas corridas?</label>
+            <input type="text" class="form-control bg-light" id="feitoNoDia" style="width:5rem;" placeholder="R$">
+          </div>
+          <div class="m-3 col-6 col-lg-2 col-md-4">
+            <label for="corridasFeitasNoDia" class="form-label">Quantas corridas fez no dia?</label>
+            <input type="text" class="form-control bg-light" id="corridasFeitasNoDi" style="width:5rem;" placeholder="Qtd">
+          </div>
+        </div>
+        <div class="d-flex justify-content-center rounded-1 border-1 " >
+          <button type="button" class="btn m-5 bg-light" onclick="calcular()">Calcular</button>
+        </div>
+    </section>
+    <section>
+      <div id="resultados" class="container-fluid d-flex justify-content-center row">
+          <div class="card m-2 col-12 col-lg-2 col-md-4 bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title">Você pagou no litro:</h5>
+                <p id="valorDoLitro" class="card-text"></p>
               </div>
-              <div class="m-3">
-                <label for="litros" class="form-label">Quantos litros abasteceu?</label>
-                <input type="text" class="form-control" id="litros" style="width:5rem;" placeholder="Lt">
-              </div>
-              <div class="m-3">
-                <label for="valor" class="form-label">Valor total pago?</label>
-                <input type="text" class="form-control" id="valor" style="width:5rem;" placeholder="R$">
-              </div>
-              <div class="m-3">
-                <label for="feitoNoDia" class="form-label">Total recebido pelas corridas?</label>
-                <input type="text" class="form-control" id="feitoNoDia" style="width:5rem;" placeholder="R$">
+            </div>
+            <div class="card m-2 col-12 col-lg-2 col-md-4 bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title">Quilometros por litro:</h5>
+                <p id="kmPorLitro" class="card-text"></p>
               </div>
             </div>
-            <div class="d-flex justify-content-center rounded-1 border-1" >
-              <button type="button" class="btn m-5" onclick="calcular()">Calcular</button>
+            <div class="card m-2 col-12 col-lg-2 col-md-4 bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title">Custo por km:</h5>
+                <p id="valorDoKm" class="card-text"></p>
+              </div>
             </div>
-        </section>
-        <section>
-            <div id="resultados" class="container-fluid d-flex justify-content-center">
-                <div class="card mx-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Você pagou no litro:</h5>
-                      <p id="valorDoLitro" class="card-text"></p>
-                    </div>
-                  </div>
-                  <div class="card mx-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Quilometros por litro:</h5>
-                      <p id="kmPorLitro" class="card-text"></p>
-                    </div>
-                  </div>
-                  <div class="card mx-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Custo por km:</h5>
-                      <p id="valorDoKm" class="card-text"></p>
-                    </div>
-                  </div>
-                  <div class="card mx-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">A média do valor de suas corridas foi:</h5>
-                      <p id="valorDaCorrida" class="card-text"></p>
-                    </div>
-                  </div>
-                  <div class="card mx-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Seu lucro do dia:</h5>
-                      <p id="lucroDoDia" class="card-text"></p>
-                    </div>
-                  </div>
+            <div class="card m-2 col-12 col-lg-2 col-md-4 bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title">A média do valor de suas corridas foi:</h5>
+                <p id="valorDaCorrida" class="card-text"></p>
+              </div>
             </div>
-        </section>
-
-    </main>
+            <div class="card m-2 col-12 col-lg-2 col-md-4 bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-title">Seu lucro do dia:</h5>
+                <p id="lucroDoDia" class="card-text"></p>
+              </div>
+            </div>
+      </div>
+    </section>
+  </main>
     <footer>
 
     </footer>
