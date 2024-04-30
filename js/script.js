@@ -1,3 +1,5 @@
+/*MODO NOTURNO*/
+
 const inputCheck = document.querySelector('#modo-noturno');
 const elemento = document.querySelector('body');
 
@@ -5,6 +7,8 @@ inputCheck.addEventListener('click', ()=>{
     const modo = inputCheck.checked ? 'dark' : 'light';
     elemento.setAttribute('data-bs-theme', modo)
 })
+
+/*FUNÇÕES E CALCULO AUTOMATICO*/
 
 function calcular() {
     let litros = parseFloat(document.getElementById('litros').value);
