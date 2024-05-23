@@ -43,25 +43,46 @@
             </section>
 
             <section class="block-nova-transacao">
-                <h2>Nova transação</h2>
-                <form action="" method="post" novalidate>
-                    <div class="campo">
+                <h2>Controle</h2>
+                <form action="" method="post" class="row" novalidate>
+                    <div class="campo col-6">
                         <select name="tipoTransacao" id="tipoTransacao" class="campo-input" required>
-                            <option value="">Selecione o tipo de transação</option>
-                            <option value="Ganhos">Ganhos</option>
-                            <option value="Abastecimentos">Abastecimento</option>
+                            <option value="">Selecione o tipo de inserção de dados:</option>
+                            <option value="Ganhos">Rendimentos do dia</option>
+                            <option value="Abastecimento">Abastecimento</option>
                             <option value="Manutenção do veículo">Manutenção do veículo</option>
                         </select>
                     </div>
-                    <div class="campo">
-                        <label for="valor">Valor:</label><br>
-                        <input type="number" name="valor" id="valor" class="campo-input" placeholder="0,00" step=".01" min="0" required />
-                    </div>
-                    <div class="campo">
+                    <div class="campo col-6">
                         <label for="data">Data:</label><br>
                         <input type="date" name="data" id="data" class="campo-input" placeholder="dd/mm/aaaa" required />
                     </div>
-                    <div class="campo">
+                    <div class="campo col-6">
+                        <label for="valor">Valor no Uber:</label><br>
+                        <input type="number" name="valorUber" id="valorUber" class="campo-input" placeholder="0,00" step=".01" min="0" required />
+                    </div>
+                    <div class="campo col-6">
+                        <label for="data">Quantia de corridas feitas no Uber:</label><br>
+                        <input type="number" name="qtdUber" id="qtdUber" class="campo-input" placeholder="00" required />
+                    </div>
+                    <div class="campo col-6">
+                        <label for="valor">Valor na 99:</label><br>
+                        <input type="number" name="valor99" id="valor99" class="campo-input" placeholder="0,00" required />
+                    </div>
+                    <div class="campo col-6">
+                        <label for="data">Quantia de corridas feitas no Uber:</label><br>
+                        <input type="number" name="qtd99" id="qtd99" class="campo-input" placeholder="00" required />
+                    </div>
+                    
+                    <div class="campo col-6">
+                        <label for="data">Horario que iniciou:</label><br>
+                        <input type="hour" name="hrInicio" id="hrInicio" class="campo-input" placeholder="00:00" required />
+                    </div>
+                    <div class="campo col-6">
+                        <label for="data">Horario que parou:</label><br>
+                        <input type="hour" name="hrFim" id="hrFim" class="campo-input" placeholder="00:00" required />
+                    </div>
+                    <div class="campo col-6">
                         <button type="submit" class="btn">
                             Concluir transação
                         </button>
@@ -86,6 +107,7 @@
             </div>
         </aside>
     </main>
-    <script src="./js/bytebank.js"></script>
+    <script src="./js/saldo-component.js"></script>
+    <script src="./js/nova-transacao-component.js"></script>
 </body>
 </html>
