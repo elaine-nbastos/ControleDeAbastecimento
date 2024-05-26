@@ -32,7 +32,7 @@
                 <div class="flex">
                     <div class="saldo-valor">
                         <strong>
-                            Saldo <img src="./assents/images/olho.svg" alt="Mostrar saldo" />
+                            Salario do mês <img src="./assents/images/olho.svg" alt="Mostrar saldo" />
                         </strong>
                         <div class="cc">
                             <span>Conta Corrente</span>
@@ -42,32 +42,27 @@
                 </div>
             </section>
 
-            <section class="block-nova-transacao">
+            <section  class="cadastros">
                 <h2>Controle</h2>
                 <form action="" method="post" class="row" novalidate>
-                    <div class="campo col-6">
-                        <select name="tipoTransacao" id="tipoTransacao" class="campo-input" required>
-                            <option value="">Selecione o tipo de inserção de dados:</option>
-                            <option value="Rendimentos">Rendimentos do dia</option>
-                            <option value="Abastecimento">Abastecimento</option>
-                            <option value="Manutencao">Manutenção do veículo</option>
-                        </select>
+                    <div class="cartaoDePonto row" id="cartaoDePonto">
+                        <div class="campo col-2">
+                            <label for="data">Data:</label><br>
+                            <input type="date" name="data" id="data" class="campo-input" placeholder="dd/mm/aaaa" required />
+                        </div>
+                        <div class="campo col-2 dHrInicio">
+                            <label for="hrInicio">Horario que iniciou:</label><br>
+                            <input type="hour" name="hrInicio" id="hrInicio" class="campo-input" placeholder="00:00" required />
+                        </div>
+                        <div class="campo col-2">
+                            <label for="hrFim">Horario que parou:</label><br>
+                            <input type="hour" name="hrFim" id="hrFim" class="campo-input" placeholder="00:00" required />
+                        </div>
                     </div>
+                    
+                    <p><strong> Rendimentos do dia</strong></p>
 
-                    <div class="campo col-6">
-                        <label for="data">Data:</label><br>
-                        <input type="date" name="data" id="data" class="campo-input" placeholder="dd/mm/aaaa" required />
-                    </div>
-                    <div class="campo col-6">
-                        <label for="hrInicio">Horario que iniciou:</label><br>
-                        <input type="hour" name="hrInicio" id="hrInicio" class="campo-input" placeholder="00:00" required />
-                    </div>
-                    <div class="campo col-6">
-                        <label for="hrFim">Horario que parou:</label><br>
-                        <input type="hour" name="hrFim" id="hrFim" class="campo-input" placeholder="00:00" required />
-                    </div>
-
-                    <div class="campo col-6">
+                    <div class="campo col-4">
                         <label for="valorUber">Valor no Uber:</label><br>
                         <input type="number" name="valorUber" id="valorUber" class="campo-input" placeholder="0,00" required />
                     </div>
@@ -87,6 +82,7 @@
                         <label for="qtd99">Quantia de corridas feitas na 99:</label><br>
                         <input type="number" name="qtd99" id="qtd99" class="campo-input" placeholder="00" required />
                     </div>
+                    <p><strong>Abastecimento</strong></p>
                     <div class="campo col-6">
                         <label for="valorAbastecido">Valor abastecido</label><br>
                         <input type="number" name="valorAbastecido" id="valorAbastecido" class="campo-input" placeholder="0,00" required />
@@ -95,12 +91,13 @@
                         <label for="qtdLitrosAbastecido">Quantia de litros abastecido</label><br>
                         <input type="number" name="qtdLitrosAbastecido" id="qtdLitrosAbastecido" class="campo-input" placeholder="00" required />
                     </div>
+                    <p><strong>Manutenção do veículo</strong></p>
                     <div class="campo col-6">
                         <label for="manutencaoRealizada">Tipo de manutenção realizada</label><br>
                         <input type="number" name="manutencaoRealizada" id="manutencaoRealizada" class="campo-input" placeholder="00" required />
                     </div>
                     <div class="campo col-6">
-                        <label for="valorManutencao">Valor da manutencao</label><br>
+                        <label for="valorManutencao">Valor da manutenção</label><br>
                         <input type="number" name="valorManutencao" id="valorManutencao" class="campo-input" placeholder="00" required />
                     </div>
                     
@@ -109,6 +106,7 @@
                             Concluir transação
                         </button>
                     </div>
+                    
                 </form>
             </section>
         </div>
@@ -129,7 +127,7 @@
             </div>
         </aside>
     </main>
-    <script src="./js/saldo-component.js"></script>
-    <script src="./js/nova-transacao-component.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
 </html>

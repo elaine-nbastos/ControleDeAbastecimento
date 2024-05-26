@@ -1,12 +1,30 @@
-.block-nova-transacao {
-    height: 590px;
-    padding: 24px;
-    border-radius: 8px;
+.cadastros {
+    height: 1600px;
     background-image: url('../../images/nova-transacao-bg1.png'), url('../../images/nova-transacao-bg2.png'), url('../../images/nova-transacao-bg3.png');
     background-position: bottom left, bottom 23px right, top right;
     background-repeat: no-repeat;
     background-color: var(--cor-tercearia);
-    margin-top: 24px;
+
+
+    & h2 {
+        font-size: var(--fonte-t1);
+        padding: 0;
+
+    }
+
+
+    @media (max-width: 950px) {
+        width: 100%;
+    }
+}
+
+.block-nova-transacao {
+    height: 600px;
+    background-image: url('../../images/nova-transacao-bg1.png'), url('../../images/nova-transacao-bg2.png'), url('../../images/nova-transacao-bg3.png');
+    background-position: bottom left, bottom 23px right, top right;
+    background-repeat: no-repeat;
+    background-color: var(--cor-tercearia);
+
 
     & h2 {
         font-size: var(--fonte-t1);
@@ -14,9 +32,6 @@
         margin-block: 0 32px;
     }
 
-    & select#tipoTransacao {
-        width: 355px;
-    }
 
     @media (max-width: 950px) {
         width: 100%;

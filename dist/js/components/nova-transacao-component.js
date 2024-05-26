@@ -1,6 +1,9 @@
 import SaldoComponent from "./saldo-component.js";
 import Conta from "../types/conta.js";
 import ExtratoComponent from "./extrato-components.js";
+
+console.log("esta funcionando");
+
 const elementoFormulario = document.querySelector(".block-nova-transacao form");
 elementoFormulario.addEventListener("submit", function (event) {
     try {
@@ -31,8 +34,8 @@ elementoFormulario.addEventListener("submit", function (event) {
 
         const novaTransacao = {
             tipoTransacao: tipoTransacao,
-            valor: valorUber,
             data: data,
+            valorUber: valorUber,
             qtdUber: qtdUber,
             valor99: valor99,
             qtd99: qtd99,
